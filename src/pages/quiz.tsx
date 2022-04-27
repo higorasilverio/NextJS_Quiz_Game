@@ -4,7 +4,7 @@ import { Quiz, Statement } from "src/components";
 import { isNotEmpty } from "src/utils";
 import { useRouter } from "next/router";
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "https://next-js-quiz-game.vercel.app/api";
 
 export default function QuizPage() {
   const router = useRouter();
