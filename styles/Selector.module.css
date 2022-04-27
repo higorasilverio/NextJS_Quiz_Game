@@ -1,0 +1,42 @@
+.selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 90px;
+  border-radius: 45px;
+  font-size: 4rem;
+  border: none;
+  margin: 0 10px;
+  background-color: #de6a33;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 300px;
+  border-radius: 75px;
+  font-size: 3rem;
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #000;
+}

@@ -1,0 +1,146 @@
+@keyframes bob-on-hover {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@-webkit-keyframes bob-on-hover {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes bob-on-hover-float {
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@-webkit-keyframes bob-on-hover-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+.answer {
+  display: flex;
+  min-width: 500px;
+  height: 75px;
+  margin: 0.5rem;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex: 1;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.content.revealedAnswer {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.front {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  border-radius: 12px;
+  border-radius: 12px;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.front:hover {
+  -webkit-animation-name: bob-on-hover-float, bob-on-hover;
+  animation-name: bob-on-hover-float, bob-on-hover;
+  -webkit-animation-duration: 0.3s, 1.5s;
+  animation-duration: 0.3s, 1.5s;
+  -webkit-animation-delay: 0s, 0.3s;
+  animation-delay: 0s, 0.3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
+
+.back > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-radius: 12px;
+  cursor: default;
+}
+
+.right {
+  background-color: #2baa6d;
+}
+
+.wrong {
+  background-color: #e44a4c;
+}
+
+.right .value,
+.wrong .value {
+  font-size: 1.5rem;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.value {
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
